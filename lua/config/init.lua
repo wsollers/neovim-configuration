@@ -15,6 +15,7 @@ require("config.options")
 require("config.globals")
 require("config.keymaps")
 require("config.autocmds")
+require("config.compiler-keymaps") -- nvim compiler
 
 
 
