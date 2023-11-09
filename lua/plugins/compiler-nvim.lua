@@ -19,4 +19,4 @@ return { -- This plugin
       default_detail = 1
     },
   },
-},
+}
