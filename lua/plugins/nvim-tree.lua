@@ -1,9 +1,15 @@
 return {
   "nvim-tree/nvim-tree.lua",
   lazy = false,
-  config = {
+  opts = {
     filters = {
-      dotfiles = true
-    }
-  }
+        git_ignored = false,
+        dotfiles = true,
+        git_clean = false,
+        no_buffer = false,
+        custom = {},
+        exclude = {},
+      },
+
+  },
 }
