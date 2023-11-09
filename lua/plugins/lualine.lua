@@ -1,5 +1,5 @@
 local config = function()
-	local theme = require("lualine.themes.gruvbox")
+	local theme = require("lualine.themes.gruvbox_light")
 
 	-- set bg transparency in all modes
 	theme.normal.c.bg = nil
