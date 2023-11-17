@@ -106,6 +106,19 @@ local config = function()
 		on_attach = on_attach,
 	})
 
+	--gopls
+	lspconfig.gopls.setup({
+		settings = {
+			gopls = {
+				analyses = {
+					unusedparams = true,
+				},
+				--staticcheck = true,
+				gofumpt = true,
+			},
+		},
+	})
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local flake8 = require("efmls-configs.linters.flake8")
