@@ -1,4 +1,3 @@
-
 local mapkey = require("util.keymapper").mapkey
 
 -- Buffer Navigation
@@ -49,3 +48,7 @@ api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", {})
 api.nvim_set_keymap("n", "<C-_>", "gtc", { noremap = false })
 api.nvim_set_keymap("v", "<C-_>", "goc", { noremap = false })
 
+-- FloaTerm configuration
+mapkey("n", "<leader>ft", ":FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 fish <CR> ")
+mapkey("n", "t", ":FloatermToggle myfloat<CR>")
+mapkey("t", "<Esc>", "<C-\\><C-n>:q<CR>")
