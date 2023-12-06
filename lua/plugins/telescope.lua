@@ -27,6 +27,8 @@ local config = function()
 			},
 		},
 	})
+
+	telescope.load_extension("ui-select")
 end
 
 return {
@@ -43,4 +45,3 @@ return {
 		mapkey("<leader>fb", "Telescope buffers", "n"),
 	},
 }
-

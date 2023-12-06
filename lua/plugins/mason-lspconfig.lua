@@ -11,7 +11,8 @@ local opts = {
 		"lua_ls",
 		"emmet_ls",
 		"jsonls",
-    "gopls"
+		"gopls",
+		"jdtls",
 	},
 
 	automatic_installation = true,
@@ -22,7 +23,5 @@ return {
 	opts = opts,
 	event = "BufReadPre",
 	dependencies = "williamboman/mason.nvim",
-  lazy = false
+	lazy = false,
 }
-
-
