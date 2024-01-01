@@ -7,8 +7,10 @@ mapkey("<leader>bb", "e #", "n") -- Switch to Other Buffer
 mapkey("<leader>`", "e #", "n") -- Switch to Other Buffer
 
 -- Directory Navigatio}n
-mapkey("<leader>m", "NvimTreeFocus", "n")
-mapkey("<leader>e", "NvimTreeToggle", "n")
+--mapkey("<leader>m", "NvimTreeFocus", "n")
+--mapkey("<leader>e", "NvimTreeToggle", "n")
+---Neotree
+mapkey("<leader>m", ":Neotree filesystem reveal left<CR>", "n")
 
 -- Pane and Window Navigation
 mapkey("<C-h>", "<C-w>h", "n") -- Navigate Left

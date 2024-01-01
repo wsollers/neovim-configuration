@@ -21,6 +21,8 @@ local config = function()
 			"css",
 			"markdown",
 			"bash",
+			"kotlin",
+			"cmake",
 			"lua",
 			"dockerfile",
 			"solidity",
