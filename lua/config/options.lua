@@ -44,3 +44,4 @@ opt.guicursor =
 opt.encoding = "UTF-8"
 
 opt.laststatus = 3
+

@@ -17,7 +17,7 @@ require("config.options")
 require("config.globals")
 require("config.keymaps")
 require("config.autocmds")
-require("config.compiler-keymaps") -- nvim compiler
+--require("config.compiler-keymaps") -- nvim compiler
 
 local plugins = "plugins"
 
@@ -49,3 +49,4 @@ local opts = {
 }
 
 require("lazy").setup(plugins, opts)
+

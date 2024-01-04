@@ -1,4 +1,5 @@
 local mapkey = require("util.keymapper").mapkey
+--stuff
 
 -- Buffer Navigation
 mapkey("<leader>bn", "bnext", "n") -- Next buffer
@@ -7,50 +8,21 @@ mapkey("<leader>bb", "e #", "n") -- Switch to Other Buffer
 mapkey("<leader>`", "e #", "n") -- Switch to Other Buffer
 
 -- Directory Navigatio}n
---mapkey("<leader>m", "NvimTreeFocus", "n")
---mapkey("<leader>e", "NvimTreeToggle", "n")
----Neotree
-mapkey("<leader>m", ":Neotree filesystem reveal left<CR>", "n")
+mapkey("<leader>m", "NvimTreeFocus", "n")
+mapkey("<leader>e", "NvimTreeToggle", "n")
 
--- Pane and Window Navigation
-mapkey("<C-h>", "<C-w>h", "n") -- Navigate Left
-mapkey("<C-j>", "<C-w>j", "n") -- Navigate Down
-mapkey("<C-k>", "<C-w>k", "n") -- Navigate Up
-mapkey("<C-l>", "<C-w>l", "n") -- Navigate Right
-mapkey("<C-h>", "wincmd h", "t") -- Navigate Left
-mapkey("<C-j>", "wincmd j", "t") -- Navigate Down
-mapkey("<C-k>", "wincmd k", "t") -- Navigate Up
-mapkey("<C-l>", "wincmd l", "t") -- Navigate Right
-mapkey("<C-h>", "TmuxNavigateLeft", "n") -- Navigate Left
-mapkey("<C-j>", "TmuxNavigateDown", "n") -- Navigate Down
-mapkey("<C-k>", "TmuxNavigateUp", "n") -- Navigate Up
-mapkey("<C-l>", "TmuxNavigateRight", "n") -- Navigate Right
+--Telescope Mappings
+mapkey("<leader>fk", "Telescope keymaps", "n")
+mapkey("<leader>fh", "Telescope help_tags", "n")
+mapkey("<leader>ff", "Telescope find_files", "n")
+mapkey("<leader>fg", "Telescope live_grep", "n")
+mapkey("<leader>fb", "Telescope buffers", "n")
 
--- Window Management
-mapkey("<leader>sv", "vsplit", "n") -- Split Vertically
-mapkey("<leader>sh", "split", "n") -- Split Horizontally
+vim.keymap.set("n", "<leader>fd", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>pd", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
 
--- Indenting
-mapkey("<", "v", "<gv") -- Shift Indentation to Left
-mapkey(">", "v", ">gv") -- Shift Indentation to Right
+vim.api.nvim_set_keymap( "n", "<space>fb", ":Telescope file_browser<CR>", { noremap = true }
+)
 
--- Show Full File-Path
-mapkey("<leader>pa", "echo expand('%:p')", "n") -- Show Full File Path
-
-local api = vim.api
-
--- Zen Mode
-api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", {})
-api.nvim_set_keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", {})
-api.nvim_set_keymap("n", "<leader>sm", ":TZFocus<CR>", {})
-api.nvim_set_keymap("n", "<leader>zm", ":TZMinimalist<CR>", {})
-api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", {})
-
--- Comments
-api.nvim_set_keymap("n", "<C-_>", "gtc", { noremap = false })
-api.nvim_set_keymap("v", "<C-_>", "goc", { noremap = false })
-
--- FloaTerm configuration
-mapkey("n", "<leader>ft", ":FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 fish <CR> ")
-mapkey("n", "t", ":FloatermToggle myfloat<CR>")
-mapkey("t", "<Esc>", "<C-\\><C-n>:q<CR>")
+-- open file_browser with the path of the current buffer
+--vim.api.nvim_set_keymap( "n", "<space>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", { noremap = true })

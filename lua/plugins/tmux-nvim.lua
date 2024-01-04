@@ -1,3 +1,0 @@
-return {
-	"nathom/tmux.nvim",
-}

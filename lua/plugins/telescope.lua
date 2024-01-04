@@ -1,47 +1,39 @@
-local mapkey = require("util.keymapper").mapkey
-
-local config = function()
-	local telescope = require("telescope")
-	telescope.setup({
-		defaults = {
-			mappings = {
-				i = {
-					["<C-j>"] = "move_selection_next",
-					["<C-k>"] = "move_selection_previous",
-				},
-			},
-		},
-		pickers = {
-			find_files = {
-				theme = "dropdown",
-				previewer = false,
-				hidden = true,
-			},
-			live_grep = {
-				theme = "dropdown",
-				previewer = false,
-			},
-			buffers = {
-				theme = "dropdown",
-				previewer = false,
-			},
-		},
-	})
-
-	telescope.load_extension("ui-select")
-end
-
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.3",
 	lazy = false,
-	dependencies = { "nvim-lua/plenary.nvim" },
-	config = config,
-	keys = {
-		mapkey("<leader>fk", "Telescope keymaps", "n"),
-		mapkey("<leader>fh", "Telescope help_tags", "n"),
-		mapkey("<leader>ff", "Telescope find_files", "n"),
-		mapkey("<leader>fg", "Telescope live_grep", "n"),
-		mapkey("<leader>fb", "Telescope buffers", "n"),
+	requires = {
+		{ "nvim-lua/plenary.nvim" },
+		{ "nvim-telescope/telescope-fzf-native.nvim" },
+		{ "chip/telescope-software-licenses.nvim" },
+		{
+			"dhruvmanila/browser-bookmarks.nvim",
+			version = "*",
+			-- Only required to override the default options
+			opts = {
+				-- Override default configuration values
+				-- selected_browser = 'chrome'
+			},
+			dependencies = {
+				--   -- Only if your selected browser is Firefox, Waterfox or buku
+				"kkharji/sqlite.lua",
+				--
+				--   -- Only if you're using the Telescope extension
+				--   'nvim-telescope/telescope.nvim',
+			},
+		},
+		{
+			"princejoogie/dir-telescope.nvim",
+			lazy = false,
+			-- telescope.nvim is a required dependency
+			requires = { "nvim-telescope/telescope.nvim" },
+			config = function()
+				require("dir-telescope").setup({
+					-- these are the default options set
+					hidden = true,
+					no_ignore = false,
+					show_preview = true,
+				})
+			end,
+		},
 	},
 }
