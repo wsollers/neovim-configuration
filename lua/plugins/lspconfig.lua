@@ -4,9 +4,11 @@ return {
 	lazy = false,
 	dependencies = {
 		-- Automatically install LSPs to stdpath for neovim
-		{ "williamboman/mason.nvim", config = true },
+		{ "williamboman/mason.nvim", lazy = false, opts = {} },
+
 		{
 			"williamboman/mason-lspconfig.nvim",
+			lazy = false,
 			opts = {
 				ensure_installed = {
 					"efm",
@@ -33,13 +35,12 @@ return {
 					"graphql",
 					"html",
 					"htmx",
-					"golangci_lint",
 					"jsonls",
 					"kotlin_language_server",
-					"autotools_language_server",
+					"autotools_ls",
 					"marksman",
 					"powershell_es",
-					"sdqlls",
+					"sqlls",
 					"terraformls",
 					"vimls",
 					"zls",
@@ -55,6 +56,6 @@ return {
 		{ "j-hui/fidget.nvim", opts = {} },
 
 		-- Additional lua configuration, makes nvim stuff amazing!
-		"folke/neodev.nvim",
+		{ "folke/neodev.nvim", opts = {} },
 	},
 }

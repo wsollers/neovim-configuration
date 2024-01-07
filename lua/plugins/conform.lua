@@ -33,7 +33,7 @@ return {
 				css = { { "prettierd", "prettier" } },
 				scss = { { "prettierd", "prettier" } },
 				go = { "gofumpt" },
-				c = { "clang-format" },
+        c = { "clang-format" },
 				cpp = { "clang-format" },
 				htmx = { { "prettierd", "prettier" } },
 				csharp = { "dotnet-format" },
