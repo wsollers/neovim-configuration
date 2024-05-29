@@ -18,7 +18,10 @@ lspconfig.cssls.setup {}
 lspconfig.graphql.setup {}
 lspconfig.dockerls.setup {}
 lspconfig.csharp_ls.setup {}
-lspconfig.erlangls.setup {}
+lspconfig.erlangls.setup {
+  -- Unix
+  cmd = { "/home/wsollers/local/bin/erlang_ls" };
+}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {

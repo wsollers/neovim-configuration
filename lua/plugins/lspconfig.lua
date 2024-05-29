@@ -31,6 +31,7 @@ return {
 					"cssls",
 					"codeqlls",
 					"elp",
+          "erlangls",
 					"elixirls",
 					"graphql",
 					"html",
